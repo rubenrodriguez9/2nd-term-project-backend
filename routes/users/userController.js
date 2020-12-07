@@ -56,7 +56,7 @@ module.exports = {
             }               
             
 
-            let token = jwt.sign({email: foundEmail.email, _id: foundEmail._id,  }, 'detroit30', {expiresIn: '10m'})
+            let token = jwt.sign({email: foundEmail.email, _id: foundEmail._id,  }, 'detroit30', {expiresIn: '1000m'})
             
             res.json({jwtToken: token})
             
