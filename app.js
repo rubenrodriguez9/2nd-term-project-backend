@@ -9,10 +9,11 @@ const cors = require('cors')
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users/users');
+const loanRouter = require('./routes/loans/loanlist');
 
 const app = express();
 
-mongoose.connect('mongodb://localhost/user-database', {
+mongoose.connect('mongodb://localhost/loan-database', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
@@ -34,6 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
+app.use("/api/loans", loanRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
