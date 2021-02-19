@@ -13,7 +13,7 @@ const loanRouter = require('./routes/loans/loanlist');
 
 const app = express();
 
-mongoose.connect('mongodb://localhost/loan-database', {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
